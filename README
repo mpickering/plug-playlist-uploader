@@ -1,0 +1,5 @@
+Modules needed
+
+pip install gdata
+pip install requests
+pip install flask

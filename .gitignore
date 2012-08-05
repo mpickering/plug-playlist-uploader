@@ -1,0 +1,4 @@
+venc
+*.pyc
+.env
+main.py

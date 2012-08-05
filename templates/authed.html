@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>plug2youtube</title>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+		<LINK REL=StyleSheet HREF="../static/styles.css" TYPE="text/css">
+		<script src='http://ricostacruz.com/jquery.transit/jquery.transit.js'></script>
+		<link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
+		<script type='text/javascript' src='../static/upload.js'></script>
+	</head>
+	<body>
+		<div id='content'>
+			<div id='title'>
+				plug.dj playlist uploader
+			</div>
+			<div id='instructions'>
+				This site allows you to upload your plug.dj playlists to your Youtube account.
+				<table> 	
+				<tr class='instruction'>
+					<td class='num'>1.</td> 
+					<td> Drag <a href="javascript:(function(){javascript%3A%28function%28%29%7B%24%28%27%23uploaderBox%27%29.remove%28%29%3B%24%28%22%23idRemove%22%29.remove%28%29%3B%20var%20data%20%3D%20MediaOverlay.currentListView.data.filter%28function%28item%29%7Bif%20%28item.format%3D%3D1%29%7Breturn%20true%7D%7D%29.map%28function%28item%29%7Breturn%20item.cid%7D%29.join%28%29%3Bleft%20%3D%20%20%24%28%27%23footer-container%27%29.css%28%27left%27%29%3B%24%28%22body%22%29.append%28%22%3Ctextarea%20rows%3D15%20cols%3D100%20id%3D%27uploaderBox%27%20style%3D%27position%3Aabsolute%3B%20top%3A760px%3B%20%20width%3A1200px%3B%20left%3A%22%20+%20left%20+%20%22%27%3E%3C/textarea%3E%22%29%3B%24%28%27%23uploaderBox%27%29.val%28data%29%3B%24%28%27.footer%27%29.append%28%22%3Cspan%20id%3D%5C%22idRemove%5C%22%3E%20%7C%20%3Ca%20onclick%3D%27%24%28%5C%22%23uploaderBox%5C%22%29.remove%28%29%3B%24%28%5C%22%23idRemove%5C%22%29.remove%28%29%27%3E%20%3Cspan%20style%3D%27color%3A%20red%27%3E%20Remove%20ID%20Box%20%3C/span%3E%20%3C/a%3E%3C/span%3E%22%29%7D%29%28%29%3B}());">this</a> javascript bookmarklet to your bookmark bar. </td> 
+				</tr>
+				<tr class='instruction'>
+					<td class='num'>2.</td> 
+					<td> Navigate to plug.dj, log in and select the playlist that you wish to upload to Youtube. Click on the bookmarklet and a list of Youtube IDs will appear at the bottom of the page underneath the footer.</td>
+				</tr>
+				<tr class='instruction'>
+					<td class='num'>3.</td> 
+					<td> Login to your youtube account
+				</tr>
+				<tr class='instruction'>
+					<td class='num'>4.</td> 
+					<td> Paste the list of IDs from plug.dj into the large box, type a name for your playlist in the small box (it must be a new playlist). Click Submit!</td>
+				</tr>
+				<tr class='instruction'>
+					<td class='num'>5.</td> 
+					<td> Bask in the glory of being to listen to your plug.dj playlist anywhere and everywhere! </td>
+				</tr>
+			</table>
+			<div id='meta'>
+				{% if authed %}
+					Logged in as {{name}} <a href='/logout' id='logout'> logout </a>
+				{% else %}
+					<a href={{youtubeLink or '/'}}>Login to your Youtube account</a>
+				{% endif %}
+			</div>
+			<textarea rows="15" cols="100" id='ids' placeholder='Youtube IDs seperated by a comma, i.e.: d-TKRgKx5ps,-QNB4wMH3PU'></textarea>
+			<input id='playlistName' placeholder='Playlist Name'>
+			<button onclick=upload()> Submit </button>
+			<div id='progressArea' style='display: none'>
+				<div id='progressBar'>
+					<div id='progress'></div>
+				</div>
+				<span id='textProgress'> 5 / 103</span>
+			</div>
+			<div id='feedback' style='display: none'>
+				<span id='message'> Sample message </span>
+			</div>
+		<div id='footer'>
+			Matthew Pickering 2012
+		</div>
+		</div>
+
+	</body>
+</html>

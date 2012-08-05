@@ -1,0 +1,97 @@
+body {
+color: #222;
+font-family: 'Droid Sans', arial, sans-serif;
+-webkit-font-smoothing: antialiased;
+background: -moz-radial-gradient(farthest-side, transparent 90%, rgba(0, 0, 0, 0.2) 150%) white;
+background: -webkit-gradient(radial, center center, 500, center center, 1400, from(transparent), to(rgba(0, 0, 0, 0.6))) white;
+background-image: -webkit-gradient(radial, 50% 50%, 500, 50% 50%, 1400, from(transparent), to(rgba(0, 0, 0, 0.597656)));
+background-repeat-x: initial;
+background-repeat-y: initial;
+background-attachment: initial;
+background-position-x: initial;
+background-position-y: initial;
+background-origin: initial;
+background-clip: initial;
+background-color: white;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-box-align: center;
+-webkit-box-pack: center;
+display: -moz-box;
+-moz-box-orient: vertical;
+-moz-box-align: center;
+-moz-box-pack: center;
+display: -o-box;
+-o-box-orient: vertical;
+-o-box-align: center;
+-o-box-pack: center;
+width: 100%;
+}
+
+#title{
+	font-size: 40px;
+
+}
+
+#content{
+	width:870px;
+
+}
+
+#feedback{
+	height: 30px;
+	width: 35%;
+	margin-top: 10px;
+	padding: 5px;
+}
+
+.instruction{
+	display: block;
+	padding: 5px;
+
+}
+
+#ids{
+	display: block;
+}
+
+.num{
+	font-size: 110%;
+	padding-right: 5px;
+}
+
+#footer{
+	margin-top: 50px;
+	font-size: 8px;
+}
+
+
+#progressArea{
+	width: 154px;
+	height: 20px;
+	margin-left: 250px;
+	margin-top: -23px;
+}
+
+#progressBar{
+   display:block;
+   width: 100px;
+   height: 15px;
+   border-style:solid;
+    border-width:1px;
+    margin-top:1px;
+}
+
+#textProgress{
+    display: block;
+    float:right;
+    font-size: 10px;
+    margin-top: -15px;
+}
+
+#progress{
+    display:block;
+    background-color: blue;
+    width:0px;
+    height: 15px
+}
